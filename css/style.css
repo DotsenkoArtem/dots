@@ -505,7 +505,10 @@ select::-ms-expand {
   align-items: baseline;
 }
 .logo__name {
-  letter-spacing: 0;
+  font-weight: 900;
+  letter-spacing: -.14em;
+  color: white;
+  text-shadow: 0 0 2px rgb(0 0 225);
 }
 
 .dots {
@@ -521,13 +524,14 @@ select::-ms-expand {
 .dots__item {
   display: block;
   position: relative;
-  margin-right: 3px;
+  margin-right: -2px;
   width: 0.3em;
   height: 0.3em;
   font-size: 0.75em;
   font-weight: 300;
   border-radius: 50%;
-  background: #335eea;
+  color: white;
+  text-shadow: 0 0 2px rgb(0 0 225);
   -webkit-transition: 0.3s;
   -o-transition: 0.3s;
   transition: 0.3s;

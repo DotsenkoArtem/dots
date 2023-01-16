@@ -530,8 +530,8 @@ select::-ms-expand {
   font-size: 0.75em;
   font-weight: 300;
   border-radius: 50%;
-  color: white;
-  text-shadow: 0 0 2px rgb(0 0 225);
+  background-color: white;
+  box-shadow: 0 0 2px rgb(0 0 225);
   -webkit-transition: 0.3s;
   -o-transition: 0.3s;
   transition: 0.3s;

@@ -1,0 +1,34 @@
+// Также миксин в sass можно определять через знак равенства (=fontFace($f-family, ...))
+
+
+
+  
+// ПОДКЛЮЧЕНИЕ ШРИФТОВ
+
+// При использовани данного миксина для каждого начертания шрифта требуется отдельный миксин с перечслением всех свойств
+// @mixin fontFace($f-family, $f-ext, $f-weight, $f-style, $f-display)
+//   @font-face
+//     font-family: $f-family
+//     src: local("#{$f-family} #{$f-ext}"), local("#{$f-family}-#{$f-ext}"), url("../fonts/#{$f-family}-#{$f-ext}.woff2") format("woff2"), url("../fonts/#{$f-family}-#{$f-ext}.woff") format("woff"), url("../fonts/#{$f-family}-#{$f-ext}.ttf") format("truetype")
+//     font-weight: $f-weight
+//     font-style: $f-style
+//     font-display: $f-display
+
+
+// Подключение всех начертаний одним миксином @font-face
+// Все свойства подключаемых шрифтов перечислены в списке $fonts в файле _partials/_variables.sass 
+@mixin fonts($font-variant)
+  @each $f-family, $f-ext, $f-weight, $f-style, $f-display in $font-variant
+    @font-face
+      font-family: $f-family
+      src: local("#{$f-family} #{$f-ext}"), local("#{$f-family}-#{$f-ext}"), url("../fonts/#{$f-family}-#{$f-ext}.woff2") format("woff2"), url("../fonts/#{$f-family}-#{$f-ext}.woff") format("woff"), url("../fonts/#{$f-family}-#{$f-ext}.ttf") format("truetype")
+      font-weight: $f-weight
+      font-style: $f-style
+      font-display: $f-display
+
+
+
+
+// Какй-то миксин - видимо для какой-то тени ))  
+@mixin headerShadowMobile ($offset-x: 0, $offset-y: 10px, $blur: 10px, $color: rgba(146, 171, 234, 0.1))
+    box-shadow: $offset-x $offset-y $blur $color

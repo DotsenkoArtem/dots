@@ -1,0 +1,310 @@
+// Переменные и миксины
+@use 'partials/variables' as *
+@use 'partials/mixins'    as *
+  
+
+/* 2.1. Styles reset */
+
+*,
+*::before,
+*::after
+  margin: 0
+  padding: 0
+  box-sizing: border-box
+  -webkit-tap-highlight-color: transparent
+
+html, body, div, span, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+abbr, address, cite, code,
+del, dfn, em, img, ins, kbd, q, samp,
+small, strong, sub, sup, var,
+b, i,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section, summary,
+time, mark, audio, video
+  border: 0
+  outline: 0
+//    font-size: 100%
+  vertical-align: baseline
+  background: transparent
+
+[hidden]
+  display: none
+
+button,
+input
+  border: none
+  outline: none
+  border-radius: 0
+
+code, kbd, pre, samp
+  font-family: monospace, serif
+  font-size: 1em
+
+i
+  display: inline-block
+
+pre
+  white-space: pre
+  white-space: pre-wrap
+  word-wrap: break-word
+
+blockquote,
+q
+  quotes: &#8220 &#8220
+  &:before,
+  &:after
+    content: ''
+    content: none
+
+ul, ol
+  list-style: none
+
+table
+  border-collapse: collapse
+  border-spacing: 0
+
+/* 2.2. Default styles */
+
+
+h1, h2, h3, h4, h5, h6,
+p
+  cursor: default
+
+// .continer_xs не нужен - достаточно функций .container
+.container
+  &,
+  &_xxl,
+  &_xl,
+  &_lg,
+  &_md,
+  &_sm
+    margin: 0 auto
+    padding: 0 var(--gutter)
+    max-width: 132rem
+
+.d
+  &-block
+    display: block
+  &-inline
+    display: inline
+  &-none
+    display: none
+
+.row
+  margin: 0 calc((-1) * var(--gutter))
+  display: flex
+  flex-wrap: wrap
+
+.scroll-hidden
+  // для скрытия полосы прокрутки
+  padding-right: 17px
+  background-color: #f1f1f1
+  overflow: hidden
+
+.wrapper
+  margin: 0 auto
+  max-width: 1920px
+  overflow: hidden
+  position: relative
+
+/* 2.3. Typography */
+address
+  font-style: normal
+
+html
+  font:
+    size: 10px
+
+body
+  font:
+    family: var(--ff-primary)
+    size: 1.8rem
+    weight: 400
+  line-height: 1.2
+  color: var(--text-primary-color)
+// 
+h1, h2, h3, h4, h5, h6
+  font-family: var(--ff-secondary)
+
+h1, h2
+  font-size: 80px
+  text-transform: uppercase
+//   line-height: 1.2
+
+// h1, h2, h3
+//   font-weight: 400
+
+// h3
+//   font-size: 34px
+//   line-height: 1.3
+
+// Font weights
+.font
+  &_xlite
+    font-weight: 200
+  &_medium
+    font-weight: 500
+  &_semibold
+    font-weight: 600
+  &_bold
+    font-weight: 700
+
+// Text settings
+.text
+  &_lite
+    color: var(--white-color)
+  &-left
+    text-align: left
+  &-center
+    text-align: center
+  &_accent-prim
+    color: var(--text-accent-primary)
+
+/* 2.4. Links */
+
+a
+  &, &:visited
+    text-decoration: none
+    outline: none
+    color: var(--link-color)
+    transition: color var(--link-transition) ease-in-out
+
+  &.text-link
+    text-decoration: underline
+    &:hover,
+    &:active
+      color: var(--primary-color)
+      text-decoration: underline
+
+    &_lite
+      color: var(--white-color)
+      text-decoration: underline
+      &:hover,
+      &:visited
+        color: var(--white-color)
+      &:hover
+        color: var(--white-color)
+        text-decoration: none
+
+  &.text-contact-link
+    text-decoration: none
+    outline: none
+    color: var(--link-color)
+    transition: color var(--link-transition) ease-in-out
+    &:hover,
+    &:active
+      color: var(--primary-color)
+
+/* 2.5. Images */
+
+img
+  display: block
+  max-width: 100%
+  height: auto
+
+/* 2.6. Buttons */
+
+button,
+input[type="submit"],
+input[type="reset"],
+input[type="button"],
+.btn
+
+  text-decoration: none
+  cursor: pointer
+  user-select: none
+
+.btn
+  padding: var(--btn-padding-y) var(--btn-padding-x)
+  display: inline-block
+  font:
+    family: var(--ff-secondary)
+    size: 16px
+    weight: 500
+  text-transform: uppercase
+  border-radius: var(--btn-radius)
+  background: none
+  overflow: hidden
+  transition: var(--prim-transition)
+
+  &_primary
+    color: var(--btn-color)
+    background-color: var(--btn-prim-bg)
+    &:hover
+      background-color: var(--btn-second-bg)
+
+  &_secondary
+
+    &_success
+    &_warning
+
+    &_outline
+
+    &_large
+    &_medium
+    &_small
+    &_type-file
+
+button,
+input
+  &[type="submit"]
+    display: inline-block
+
+/* 2.7. Forms  */
+
+input:not(input[type="checkbox"]),
+select
+  -webkit-appearance: none
+  -moz-appearance: none
+  appearance: none
+  outline: none
+
+input::-ms-input-placeholder
+  color: var(--input-placeholder-color)
+input::-webkit-input-placeholder
+  color: var(--input-placeholder-color)
+input::-moz-placeholder
+  color: var(--input-placeholder-color)
+
+input::-ms-clear
+  display: none
+
+input[type=search]::-webkit-search-cancel-button,
+input[type=search]::-webkit-search-decoration,
+input[type=search]::-webkit-search-results-button,
+input[type=search]::-webkit-search-results-decoration
+  display: none
+
+select::-ms-expand
+  display: none
+
+/* 2.8. Other common settings  */
+// Backgrounds
+.has-bg
+  position: relative
+.bg
+  width: 100%
+  height: 100%
+  position: absolute
+  top: 0
+  right: 0
+  bottom: 0
+  left: 0
+  z-index: -1
+
+  img
+    display: block
+    width: 100%
+    height: 100%
+
+  &_cover
+    img
+      object-fit: cover
+
+  &_contain
+    img
+      object-fit: contain

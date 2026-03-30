@@ -1,0 +1,193 @@
+// Переменные и миксины
+@use 'partials/variables' as *
+@use 'partials/mixins'    as *
+
+// Сетку включить/отключить можно в файле _variables.sass изменив соответствующее значение переменной $grid-style;
+// Сетка работает "сверху вниз" в соответствие с нижеуказанными брейкпоинтами и медиазапросами
+// Сответствует медиазапросам в файле "media-queries.sass"
+
+// СТИЛИ КОЛОНОК
+// Всем элементам строк заданы 100%-ые значения ширины, чтобы не схлопывались (из-за того, что строка - flex)
+// Для колонок без номеров - ширина 100%, flex:1 (grow:1, shrink:1,basis:0)
+// Для колонок c номерми - ширина фикированная в зависимости от номера колонки, flex:none (grow:0, shrink:0,basis:auto)
+// Колонки с суффиксом медиазапроса ведут себя точно также, только при разрешении экрана соответствующему медиазапросу, а при разрешении экрана больше суффикса колонки колонка занимает 100% ширины строки. Например, .col_lg будет флекситься при width <= LG(1199.98px), при большем разрешении займет 100%
+
+
+// ПРИМЕР ИСПОЛЬЗОВАНИЯ КЛАССОВ СЕТКИ
+// .col.col-2_xl.col_lg.col-6_md.col_sm
+// .offset-4.col-3.offset-2_lg.col-2_lg
+
+// BREAKPOINTS / MEDIA QUERIES
+// XXL  -   min-width: 1400.00px
+// XL   -   max-width: 1399.98px
+// LG   -   max-width: 1199.98px
+// MD   -   max-width: 991.98px
+// SM   -   max-width: 767.98px
+// XS   -   max-width: 575.98px
+// XXS  -   max-width: 413.98px
+
+
+// Для того, чтобы элементы в строке не схлопывались, для всех элементов устанавливается длина 100%
+.row > *
+  flex-shrink: 0
+  width: 100%
+  max-width: 100%
+
+
+// Grid mixins
+// Vars
+// Префикс для класса задан через переменную для возможности быстрого изменения при необходимости
+$col: col
+$offset: offset
+
+// Mixin - Column flexibility setting
+=colFlexSet($media: null)
+  //При медиазапросах
+  @if $media != null    
+    @for $col-num from 0 through 12
+      // Колонкам без номеров (например .col_lg) задаю flex:1, чтобы флексились в одну строку
+      @if $col-num == 0
+        .#{$col}_#{$media}
+          flex: 1 0 0%
+        // А колонкам с номерами (например .col-3_lg) задаю flex:none, чтобы не изменяли свою ширину
+      @else
+        .#{$col}-#{$col-num}_#{$media}
+          @extend %flex-none-#{$media}
+    %flex-none-#{$media}
+      flex: none
+    // Без медиазапросов делаю тоже самое
+  @else
+    @for $col-num from 0 through 12
+      @if $col-num == 0
+        .#{$col}
+          flex: 1 0 0%
+      @else
+        .#{$col}-#{$col-num}
+          @extend %flex-none
+    %flex-none
+      flex: none
+
+// Mixin - Column width setting
+// Устанавливаю ширину колонок в зависимости от их номера
+=colWidthSet($media: null)
+  // При медиазапросах
+  @if $media != null
+    @for $col-num from 1 through 12
+      .#{$col}-#{$col-num}_#{$media}
+        width: calc( 100% * $col-num / 12 )
+    // И без медиазапросов
+  @else
+    @for $col-num from 1 through 12
+      .#{$col}-#{$col-num}
+        width: calc( 100% * $col-num / 12 )
+
+// Mixin - Column offset setting
+=colOffetSet($media: null)
+  // При медиазапросах
+  @if $media != null
+    @for $col-num from 0 through 12
+      @if $col-num == 0
+        .offset-none_#{$media}
+          margin-left: 0
+      @else
+        .offset-#{$col-num}_#{$media}
+          margin-left: calc( 100% * $col-num / 12 )
+        // И без медиазапросов
+  @else
+    @for $col-num from 0 through 12
+      @if $col-num == 0
+        .offset-none
+          margin-left: 0
+      @else
+        .offset-#{$col-num}
+          margin-left: calc( 100% * $col-num / 12 )
+
+// End of Grid mixins
+
+
+@if $grid-style
+
+  /* Column flexibility setting */
+  +colFlexSet()
+
+  /* Column width setting */
+  +colWidthSet()
+
+  /* Column offset setting */
+  +colOffetSet()
+
+  // Стили сетки для медиазапросов перенесены в media-queries.sass - в каждый соответствующий медиазапрос, и срабатывают после проверки на необходимость использования сетки
+  // XL 
+  //  ====================
+  @media (max-width: 1399.98px)
+
+    /* XL column flexibility setting */
+    +colFlexSet(xl)
+
+    /* XL column width setting */
+    +colWidthSet(xl)
+
+    /* XL column offset setting */
+    +colOffetSet(xl)
+
+  // lG 
+  //  ====================
+  @media (max-width: 1199.98px)
+
+    /* LG column flexibility setting */
+    +colFlexSet(lg)
+
+    /* LG column width setting */
+    +colWidthSet(lg)
+
+    /* XL column offset setting */
+    +colOffetSet(lg)
+
+  // MD 
+  //  ====================
+  @media (max-width: 991.98px)
+
+    /* MD column flexibility setting */
+    +colFlexSet(md)
+
+    /* MD column width setting */
+    +colWidthSet(md)
+
+    /* MD column offset setting */
+    +colOffetSet(md)
+
+  // SM
+  //  ====================
+  @media (max-width: 767.98px)
+    /* SM column flexibility setting */
+    +colFlexSet(sm)
+
+    /* SM column width setting */
+    +colWidthSet(sm)
+
+    /* SM column offset setting */
+    +colOffetSet(sm)
+
+  // XS
+  //  ====================
+  @media (max-width: 575.98px)
+    /* XS column flexibility setting */
+    +colFlexSet(xs)
+
+    /* XS column width setting */
+    +colWidthSet(xs)
+
+    /* XS column offset setting */
+    +colOffetSet(xs)
+
+  // XXS 
+  //  ====================
+  @media (max-width: 413.98px)
+    /* XXS column flexibility setting */
+    +colFlexSet(xxs)
+
+    /* XXS column width setting */
+    +colWidthSet(xxs)
+
+    /* XXS column offset setting */
+    +colOffetSet(xxs)

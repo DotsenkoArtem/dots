@@ -1,0 +1,49 @@
+//- ОДНОУРОВНЕВОЕ МЕНЮ С ДОБАВЛЕНИЕМ КЛАССА АКТИВНОЙ СТРАНИЦЕ
+
+mixin menu1Level 
+  nav.menu
+    ul.menu__list
+      each menuItem, key in pages
+        if (menuItem.isMenuItem)
+          if(menuItem.isMenuItemHasChildren)
+            li.menu__item(class= (menuItem.name == page.name) ? 'menu__item-has-children menu__item_current': 'menu__item-has-children')
+              a(href= `${key}.html`)= menuItem.name
+
+          else
+            li.menu__item(class= (menuItem.name == page.name) ? 'menu__item_current': '')
+              a(href= `${key}.html`)= menuItem.name
+
+
+
+
+
+//- ДВУХУРОВНЕВОЕ МЕНЮ С КЛАССАМИ ПОД WORDPRESS
+//- нет класса активной страниы
+
+mixin menu2LevelForWP(menu) 
+  nav.menu.menu-mobile.js-menu-mobile
+
+    button.menu-mobile-close.js-menu-mobile-close
+      .menu-mobile-close__item
+      .menu-mobile-close__item
+      
+    ul.menu-list
+
+
+      each menuItem, key in pages
+
+
+        if (menuItem.isMenuItemHasChildren)
+          li.menu-item.menu-item-has-children
+            //- a= menuItem.name
+            a(href= `${key}.html`)= menuItem.name
+
+            ul.sub-menu
+              each subMenuItem, subkey in menuItem.isMenuItemHasChildren
+                li.menu-item 
+                  a(href= `${subkey}.html`)= subMenuItem.name
+                  //- a(href= `#`)= subMenuItem.name
+            
+        else
+          li.menu-item
+            a(href= `${key}.html`)= menuItem.name

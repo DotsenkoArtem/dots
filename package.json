@@ -1,0 +1,49 @@
+{
+  "name": "update",
+  "version": "1.0.0",
+  "description": "",
+  "license": "ISC",
+  "author": "artem_dots",
+  "type": "commonjs",
+  "main": "gulpfile.js",
+  "scripts": {
+    "dev": "gulp dev",
+    "dev:lite": "gulp dev:lite",
+    "build": "cross-env NODE_ENV=production gulp build",
+    "clean": "gulp clean",
+    "test": "node --test test/build.test.js"
+  },
+  "browserslist": [
+    ">0.2%",
+    "not dead",
+    "not op_mini all",
+    "last 15 version"
+  ],
+  "devDependencies": {
+    "@babel/core": "^7.29.0",
+    "@babel/preset-env": "^7.29.2",
+    "browser-sync": "^3.0.4",
+    "cross-env": "^7.0.3",
+    "del": "^6.1.1",
+    "dotenv": "^16.0.0",
+    "gulp": "^4.0.2",
+    "gulp-autoprefixer": "^8.0.0",
+    "gulp-babel": "^8.0.0",
+    "gulp-clean-css": "^4.3.0",
+    "gulp-debug": "^4.0.0",
+    "gulp-if": "^3.0.0",
+    "gulp-notify": "^4.0.0",
+    "gulp-pug": "^5.0.0",
+    "gulp-sass": "^6.0.0",
+    "gulp-sourcemaps": "^3.0.0",
+    "gulp-terser": "^2.1.0",
+    "gulp-ttf2woff": "^1.1.1",
+    "gulp-ttf2woff2": "^4.0.1",
+    "merge-stream": "^2.0.0",
+    "sass": "^1.85.0",
+    "sharp": "^0.34.5",
+    "stream-combiner2": "^1.1.1",
+    "svgo": "^4.0.1",
+    "through2": "^4.0.2"
+  }
+}

@@ -1,0 +1,64 @@
+// COMMON SETTINGS
+
+//Status of using grid styles
+$grid-style: true
+
+// Grid Variables
+$gutter: 1.2rem
+
+// COLORS
+
+
+
+
+// TRANSITIONS
+
+
+// TEXT
+
+
+// LINKS
+
+
+// RADIUS
+
+
+// TYPOGRAPHY
+// Переменная для миксина подключения шрифтов - указать свойства для каждого начертания шрифта
+// ИНСТРУКЦИЯ: 
+//   1. Добавить файлы шрифтов (*.ttf) в src/assets/fonts/
+//   2. Примеры имён файлов: FontName-Regular.ttf, FontName-Bold.ttf
+//   3. Gulp автоматически конвертирует их в *.woff и *.woff2
+//   4. Заполнить переменную $fonts в формате:
+//      $fonts: ('FontName', 'Regular', 400, normal, swap), ('FontName', 'Bold', 700, normal, swap)
+//   5. Обновить $ff-primary и $ff-secondary на используемые шрифты
+//   6. Запустить 'gulp build' для пересборки
+
+$fonts: ('OpenSans', 'Light', 300, normal, swap), ('OpenSans', 'Regular', 400, normal, swap), ('OpenSans', 'SemiBold', 600, normal, swap), ('OpenSans', 'Bold', 700, normal, swap), ('OpenSans', 'ExtraBold', 800, normal, swap)
+
+// Переменная для основных стилей (используются системные шрифты по умолчанию)
+$ff-primary: -apple-system, OpenSans, BlinkMacSystemFont, "Segoe UI", Circe, sans-serif
+$ff-secondary: -apple-system, OpenSans, BlinkMacSystemFont, "Segoe UI", Circe, sans-serif
+
+// BUTTONS
+
+
+// MODAL
+// ------------------------------
+
+// FORMS
+// ------------------------------
+
+
+:root
+  /* Colors */
+
+
+
+  /* Grid */
+  --gutter: #{$gutter}
+
+
+  /* Typography */
+  --ff-primary: #{$ff-primary}
+  --ff-secondary: #{$ff-secondary}

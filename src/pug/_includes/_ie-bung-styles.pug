@@ -1,0 +1,95 @@
+//- Стили для заглушки для IE версии > 9
+style.
+    .ie-bung{
+        display: none;
+    }
+    @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
+        .ie-bung {
+            display: -ms-flexbox;
+            -webkit-box-pack: center;
+            -ms-flex-pack: center;
+            position: fixed;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 0;
+            z-index: 9999;
+            background: linear-gradient(180deg, #a3fff3, #003535);
+            overflow: hidden;
+        }
+        .ie-bung__smile {
+            margin-bottom: 2rem;
+            display: -ms-flexbox;
+            -ms-flex-pack: center;
+        }
+        .ie-bung__content {
+            margin-top: 10rem;
+            max-width: 80rem;
+            font-size: 1.8rem;
+            text-align: center;
+        }
+        .ie-bung__header {
+            margin-bottom: 2rem;
+        }
+        .ie-bung__main {
+            margin-bottom: 3rem;
+        }
+        .ie-bung__links i {
+            display: inline-block;
+            margin-left: 15px;
+            margin-right: 15px;
+            transition: all 0.3s;
+            opacity: 0.75;
+        }
+        .ie-bung__links i:hover {
+            -ms-transform: translateY(-2px);
+            opacity: 1;
+        }
+    }
+
+//- Стили для заглушки для IE версии <= 9
+//[if lte IE 9]>
+    <style>
+        .ie-bung {
+            display: block;
+            position: fixed;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 0;
+            z-index: 9999;
+            height: 100%;
+            background: #a3fff3;
+            overflow: hidden;
+        }
+        .ie-bung__smile {
+            margin-top: 30px;
+            margin-bottom: 20px;
+        }
+        .ie-bung__content {
+            margin-top: 100px;
+            margin-left: auto;
+            margin-right: auto;
+            width: 100%;
+            max-width: 800px;
+            font-size: 18px;
+            text-align: center;
+        }
+        .ie-bung__header {
+            margin-bottom: 20px;
+        }
+        .ie-bung__main {
+            margin-bottom: 30px;
+        }
+        .ie-bung__links i {
+            display: inline-block;
+            margin-left: 15px;
+            margin-right: 15px;
+            opacity: 0.75;
+        }
+        .ie-bung__links i:hover {
+            -ms-transform: translateY(-2px);
+            opacity: 1;
+        }
+    </style>
+    <![endif]

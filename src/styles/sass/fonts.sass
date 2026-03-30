@@ -1,0 +1,59 @@
+// Переменные и миксины
+@use 'partials/variables' as *
+@use 'partials/mixins'    as *
+
+
+// Для проверки правильности подключения кастомных шрифтов думаю следует удалить (СКРЫТИЕ ШРИФТА НЕ ПОМОГАЕТ) аналог подключаемого шрифта в Windows, затем обязательно открыть проект заново так браузер закеширует шрифты и не помогает принудительная перезагрузка. Вот! - ебсясэтимдолгоя*/
+
+
+  
+
+// Миксин для подключения шрифтов - (надо переделать через массив, или объект, или коллекцию - не знаю как там называется)
+// Также миксин можно вызывать через плюсик (+fontFace)
+
+// @include fontFace('Raleway', 'Regular', 400, normal, swap)
+
+// @include fontFace('Raleway', 'Medium', 500, normal, swap)
+
+// @include fontFace('Raleway', 'SemiBold', 600, normal, swap)
+
+// @include fontFace('Raleway', 'Bold', 700, normal, swap)
+// -------------------
+
+
+
+
+// ЕЩЕ ОДИН МИКСИН ДЛЯ ПЕРЕБОРА И ПОДКЛЮЧЕНИЯ ВСЕХ ШРИФТОВ РАЗОМ
+@include fonts($fonts)
+// -------------------
+
+
+
+// ПОДКЛЮЧЕНИЕ КАСТОМНЫХ ШРИФТОВ - СТАРЫ ВАРИАНТ
+// @font-face
+//   font-family: 'Raleway'
+//   src: local('Raleway Regular'), local('Raleway-Regular'), url('../fonts/Raleway-Regular.woff2') format('woff2'), url('../fonts/Raleway-Regular.woff') format('woff'), url('../fonts/Raleway-Regular.ttf') format('truetype')
+//   font-weight: 400
+//   font-style: normal
+//   font-display: swap
+
+// @font-face
+//   font-family: 'Raleway'
+//   src: local('Raleway Medium'), local('Raleway-Medium'), url('../fonts/Raleway-Medium.woff2') format('woff2'), url('../fonts/Raleway-Medium.woff') format('woff'), url('../fonts/Raleway-Medium.ttf') format('truetype')
+//   font-weight: 500
+//   font-style: normal
+//   font-display: swap
+
+// @font-face
+//   font-family: 'Raleway'
+//   src: local('Raleway SemiBold'), local('Raleway-SemiBold'), url('../fonts/Raleway-SemiBold.woff2') format('woff2'), url('../fonts/Raleway-SemiBold.woff') format('woff'), url('../fonts/Raleway-SemiBold.ttf') format('truetype')
+//   font-weight: 600
+//   font-style: normal
+//   font-display: swap
+
+// @font-face
+//   font-family: 'Raleway'
+//   src: local('Raleway Bold'), local('Raleway-Bold'), url('../fonts/Raleway-Bold.woff2') format('woff2'), url('../fonts/Raleway-Bold.woff') format('woff'), url('../fonts/Raleway-Bold.ttf') format('truetype')
+//   font-weight: 700
+//   font-style: normal
+//   font-display: swap

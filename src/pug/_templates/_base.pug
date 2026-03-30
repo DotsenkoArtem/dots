@@ -1,0 +1,71 @@
+doctype html
+html(lang="ru")
+
+
+  //- Common variables
+  include ../_vars/_vars.pug
+
+
+  //- Page`s variables
+  block page-vars
+
+
+  //- Mixins
+  include ../_mixins/_mixins-base
+
+
+  head
+    block head
+      include ../_includes/_head.pug
+    if (ieBung)
+      block ie-bung-styles
+        include ../_includes/_ie-bung-styles.pug
+
+
+  body 
+    //- 
+      Заглушка для Internet Explorer
+        - разметка в _includes/_ie-bung.pug
+        - стили для IE > 9 в _includes/_ie-bung-styles.pug
+        - стили для IE <= 9 в _includes/_ie-bung-styles.pug
+        - изображения для ссылок собираются в srite.png
+    if (ieBung) 
+      block ie-bung
+        include ../_includes/_ie-bung.pug
+
+    #preloader.preloader
+
+    #wrapper.wrapper
+
+      |
+      |
+      //  Header ================================================== 
+      block header
+        include ../_includes/_header.pug
+
+      |
+      |
+      block main
+        main
+
+
+      |
+      |
+      //  Footer ================================================== 
+      block footer
+        include ../_includes/_footer.pug
+
+      |
+      |
+    |
+    |
+    // Scripts ================================================== 
+    block scripts
+
+
+
+
+      //- script(src="js/fancybox.umd.js")
+      script(src="js/script.js")
+      //- script(src="js/gallery.js")
+      //- script(src="js/form-process.js")

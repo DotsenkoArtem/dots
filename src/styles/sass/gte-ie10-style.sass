@@ -1,0 +1,50 @@
+// Переменные и миксины
+@use 'partials/variables' as *
+@use 'partials/mixins'    as *
+  
+/* VIII. IE >= 10 - media-queries
+ --------------------------------------- */
+
+// Медиа запрос испльзую для версии IE >= 10
+
+
+@media screen and (-ms-high-contrast: active), (-ms-high-contrast: none)
+// Заглушка для IE версии >= 10
+  .ie-bung
+    display: flex
+    justify-content: center
+    position: fixed
+    top: 0
+    right: 0
+    bottom: 0
+    left: 0
+    z-index: 9999
+    background: linear-gradient(180deg, rgb(163, 255, 243), rgb(0, 53, 53))
+    overflow: hidden
+    &__smile
+      margin-bottom: 2rem
+      display: flex
+      justify-content: center
+
+      &__content
+        margin-top: 10rem
+        max-width: 80rem
+        font-size: 1.8rem
+        text-align: center
+
+        &__header
+          margin-bottom: 2rem
+
+        &__main
+          margin-bottom: 3rem
+
+        &__links
+          i
+            display: inline-block
+            margin-left: 15px
+            margin-right: 15px
+            transition: all .3s
+            opacity: 0.75
+            &:hover
+              transform: translateY(-2px)
+              opacity: 1

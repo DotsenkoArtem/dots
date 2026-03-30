@@ -1,0 +1,186 @@
+// Переменные и миксины
+@use 'partials/variables' as *
+@use 'partials/mixins'    as *
+  
+
+
+  
+.not-valid
+  border-color: #EB6F73
+  &::placeholder
+    color: #EB6F73
+
+.thanks
+  padding: 7rem 5rem
+  display: flex
+  justify-content: center
+  align-items: center
+  width: 100%
+  max-width: 77.7rem
+  position: fixed
+  left: calc( 50vw - 77.7rem / 2 )
+  top: 22rem
+  font-weight: 500
+  line-height: 1.2
+  text-align: center
+  background-color: var(--white-color)
+  border-radius: var(--main-radius)
+  opacity: 1
+  z-index: 99999
+  &__title
+    margin-bottom: 2rem
+    color: var(--black-color)
+    font-family: var(--ff-secondary)
+    font-size: 50px
+    line-height: 1.2
+    font-weight: 400
+    text-align: center
+    text-transform: uppercase
+    &::before
+      content: ''
+      display: block
+      margin-left: auto
+      margin-right: auto
+      width: 5.1rem
+      height: 2.4rem
+      background: url(../img/icon-gear.svg) center no-repeat
+      background-size: contain
+  &__close
+    position: absolute
+    top: -22px
+    right: -22px
+    cursor: pointer
+    width: 20px
+    height: 20px
+    background: none
+    &::before,
+    &::after
+      content: ''
+      display: inline-block
+      width: 100%
+      height: 3px
+      position: absolute
+      left: 0
+      right: 0
+      background: var(--white-color)
+      border-radius: 4px
+      transition: .2s
+    &::before
+      transform: rotate(45deg)
+    &::after
+      transform: rotate(-45deg)
+
+  &__backdrop
+    display: block
+    position: fixed
+    top: 0
+    right: 0
+    bottom: 0
+    left: 0
+    z-index: 99990
+    width: 100%
+    height: 100%
+    background: rgba(0, 0, 0, 0.8)
+
+.thanks_success
+  color: #146c43
+  border: solid 1px #a3cfbb
+  background: rgb(209, 232, 222)
+
+.thanks_error
+  color: #b02a37
+  border: solid 1px #f1aeb5
+  background: #f8d7da
+
+.thanks.active
+  animation: slideUpIn .5s ease forwards
+
+.loader-container
+  position: relative
+  z-index: 50
+
+.submit-loader
+  display: block
+  width: 100%
+  height: 100%
+  position: absolute
+  top: 0
+  right: 0
+  bottom: 0
+  left: 0
+  z-index: 55
+  background: rgba(0, 0, 0, .8) url('../img/loader.gif') center no-repeat
+  background-size: 100px 100px
+  border-radius: 10px
+  &_fixed
+    position: fixed
+    top: 0
+    right: 0
+    bottom: 0
+    left: 0
+    z-index: 99999
+
+@keyframes slideInRightBottom
+  from
+    opacity: .5
+    transform: translateX(150%)
+
+  to
+    opacity: 1
+    transform: translateX(0)
+
+@keyframes slideOutRightBottom
+  from
+    opacity: 1
+    transform: translateX(0)
+
+  to
+    opacity: .5
+    transform: translateX(150%)
+
+/* MD */
+@media (max-width: 991.98px)
+
+  .thanks
+    padding: 5rem
+    max-width: 70rem
+    left: calc( 50vw - 70rem / 2 )
+    &__close
+      top: -3.5rem
+      right: calc(50% - 1rem)
+
+/* SM */
+@media (max-width: 767.98px)
+
+  .thanks
+    &__close
+      top: -4rem
+      right: auto
+      left: calc( 50% - 10px )
+      cursor: pointer
+      width: 2rem
+      height: 2rem
+      background: none
+
+  .thanks
+    max-width: calc( 100vw - 3rem )
+    margin: 1.5rem
+    left: unset
+
+/* XS */
+@media (max-width: 575.98px)
+
+  .thanks
+    font-size: 14px
+    &__title
+      font-size: 36px
+
+@media (max-width: 479.98px)
+
+  .thanks
+    padding: 5rem 3rem
+
+@media (max-width: 359.99px)
+
+  .thanks
+    padding: 3rem 1.5rem

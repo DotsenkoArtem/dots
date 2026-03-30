@@ -1,0 +1,39 @@
+extends ../_templates/_base.pug
+
+
+//- block head
+//-     h2 Wow, Block Head is undefined!
+
+
+//- block header
+//-     h2 Wow, Block Header is undefined!
+
+
+block main 
+  main
+    section.baner.has-bg
+      .bg.bg_cover.baner__bg
+        picture
+          //- source(media='(max-width: 575px)' srcset='img/' type='image/jpg')
+          |
+          |
+          //- img(src='img/baner-bg.jpg' alt='')
+
+      .container
+        .baner__heading
+          h1= `Заголовок для страницы ${page.name}`
+
+
+
+
+
+//- block footer
+//-     h2 Wow, Block Footer is undefined!
+
+
+//- block modals
+//-     h2 Wow, Block Modals is undefined!
+
+
+//- block scripts
+//-     h2 Wow, Block Scripts is undefined!

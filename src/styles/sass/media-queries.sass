@@ -1,0 +1,531 @@
+// Переменные и миксины
+@use 'partials/variables' as *
+@use 'partials/mixins'    as *
+  
+
+@media (max-width: 1699.98px)
+
+
+@media (max-width: 1499.98px)
+
+/* XL */
+@media (max-width: 1399.98px)
+  // html
+  //   font-size: 9px
+
+  .container
+    &,
+    &_xl,
+    &_lg,
+    &_md,
+    &_sm
+      max-width: 114rem
+    &_xxl
+      max-width: 100%
+
+  .navbar
+    padding-right: 0
+
+  .map-placement__container
+    margin-left: calc(50vw - 570px)
+
+  .d
+    &-block
+      &_xl
+        display: block
+    &-inline
+      &_xl
+        display: inline
+    &-none
+      &_xl
+        display: none
+
+@media (max-width: 1299.98px)
+
+  .navbar-menu
+    &> .menu-item
+      padding-top: 1.8rem
+
+  .logo
+    margin-left: 20px
+    margin-right: auto
+
+  .menu-mobile
+    position: fixed
+    top: 0
+    left: 0
+    bottom: 0
+    transform: translateX(-100%)
+    z-index: 999
+    padding-top: 2.4rem
+    padding-right: 2.7rem
+    padding-left: 1.3rem
+    width: 100%
+    max-width: 405px
+    background: #F5F5F5
+    transition: var(--prim-transition)
+    &.open
+      transform: translateX(0%)
+
+    &-trigger,
+    &-close
+      display: flex
+
+    &-overl
+      &.open
+        display: block
+
+  .navbar
+    &-menu
+      position: relative
+      flex-direction: column
+      align-items: flex-start
+      height: 100%
+      overflow-y: auto
+
+      &> .menu-item
+        padding-left: 1.5rem
+        padding-bottom: 1.5rem
+
+      &> .menu-item:not(:first-child)
+        margin-left: initial
+
+  .sub-menu
+    padding-top: 1rem
+    position: relative
+    top: 0
+    left: 0.4rem
+    opacity: 1
+    visibility: visible
+    max-width: 0
+    max-height: 0
+    padding: 0
+    .menu-item
+      max-width: 28rem
+      a
+        padding-top: 0.9rem
+        padding-bottom: 0.9rem
+
+  .menu-item-has-children
+    padding-right: 1rem
+
+    &::before,
+    &::after
+      top: 2.2em
+    &::before
+      left: 5.8em
+      right: auto
+    &::after
+      left: calc( 5.8em + .4em )
+      right: auto
+
+@media (max-width: 1299.98px) and (min-width: 992px) and (hover:hover) and (pointer:fine)
+  .menu-item-has-children
+    &:hover
+      & > .sub-menu
+        animation: none
+        max-width: max-content
+        max-height: none
+
+/* LG */
+@media (max-width: 1199.98px)
+  // html
+  //   font-size: 8px
+
+  .container
+    &,
+    &_lg,
+    &_md,
+    &_sm
+      max-width: 96rem
+    &_xl
+      max-width: 100%
+
+  .map-placement__container
+    margin-left: calc(50vw - 570px)
+
+  .d
+    &-block
+      &_lg
+        display: block
+    &-inline
+      &_lg
+        display: inline
+    &-none
+      &_lg
+        display: none
+
+@media (max-width: 1137.98px)
+  .map-placement__container
+    margin-left: 0
+
+@media(hover:hover) and (pointer:fine)
+  .menu-mobile-trigger
+    &:hover
+      background: var(--primary-color)
+      .menu-mobile-trigger__item
+        background: var(--white-color)
+
+  .menu-item>a
+    &:hover
+      color: var(--primary-color)
+
+  .menu-item-has-children
+    &:hover
+      &>a
+        color: var(--primary-color)
+      &::before,
+      &::after
+        background: var(--primary-color)
+      &::before
+        transform: rotate(-45deg)
+      &::after
+        transform: rotate(45deg)
+      &>.sub-menu
+        animation: fadeIn var(--prim-transition) ease-out forwards
+
+  .sub-menu
+    .menu-item:hover
+      background: var(--white-color)
+
+/* MD */
+@media (max-width: 991.98px)
+  .container
+    &,
+    &_md,
+    &_sm
+      max-width: 72rem
+    &_md
+      max-width: 100%
+
+  .menu-item-has-children
+    &>a,
+    &::before,
+    &::after
+      transition: none
+    &>a
+      display: block
+      width: 11.5rem
+      position: relative
+      z-index: 10
+    &::before,
+    &::after
+      z-index: 0
+
+    &.open
+      &::before
+        background-color: var(--primary-color)
+        transform: rotate(-45deg)!important
+      &::after
+        background-color: var(--primary-color)
+        transform: rotate(45deg)!important
+      &>a
+        color: var(--primary-color)
+
+  .sub-menu.open
+    max-height: none!important
+    max-width: none!important
+    opacity: 1
+    visibility: visible
+
+  .scroll-hidden
+    padding-right: 0
+
+  .container
+    &,
+    &_md,
+    &_sm
+      max-width: 730px
+    &_lg
+      max-width: 100%
+
+  .map-placement
+    padding-top: 6rem
+
+  .map-placement__container
+    margin-left: calc(50vw - 370px)
+
+  .modal
+    &__inner
+      padding: 3rem
+      max-width: 70rem
+    &__header
+      padding-bottom: 0
+    &__body
+      padding-top: 0
+
+    .calc-order__heading
+      margin-bottom: 4rem
+      margin-left: auto
+      margin-right: auto
+      max-width: 48rem
+
+    &__close
+      top: -3.5rem
+      right: calc(50% - 1rem)
+
+  .form__label_type-file
+    font-size: 1.6rem
+
+  .d
+    &-block
+      &_md
+        display: block
+    &-inline
+      &_md
+        display: inline
+    &-none
+      &_md
+        display: none
+
+@media (max-width: 991.98px) and (orientation: landscape)
+  .modal
+    &__inner
+      min-height: 40vw
+
+/* SM */
+@media (max-width: 767.98px)
+  // html
+  // 	font-size: 7px
+  // 
+  .container
+    &,
+    &_sm
+      max-width: 54rem
+    &_md
+      max-width: 100%
+
+  .navbar
+    flex-wrap: wrap
+    &__contacts
+      &-right
+        width: 100%
+        order: 1
+        display: flex
+        justify-content: space-between
+        align-items: center
+      &-left
+        order: 4
+        margin-right: 0
+
+  .menu-mobile
+    &-trigger
+      order: 2
+
+  .logo
+    order: 3
+
+  .map-placement__container
+    margin-left: calc(50vw - 275px)
+
+  .modal
+    &__close
+      top: -4rem
+      right: auto
+      left: calc( 50% - 10px )
+      cursor: pointer
+      width: 2rem
+      height: 2rem
+      background: none
+
+  .d
+    &-block
+      &_sm
+        display: block
+    &-inline
+      &_sm
+        display: inline
+    &-none
+      &_sm
+        display: none
+
+@media (max-width: 767.98px) and (orientation: portrait)
+  .modal
+    &__inner
+      max-height: 80vh
+
+/* XS */
+@media (max-width: 575.98px)
+
+  .container
+    max-width: 410px
+    &_sm
+      max-width: 100%
+
+  .navbar
+    &__contacts
+      &-right
+        margin-bottom: 2rem
+    &__phone
+      font-size: 2rem
+    &__social
+      width: 36px
+      height: 36px
+
+  .logo
+    max-width: 13rem
+
+  .menu
+    &-mobile
+      &-trigger
+        width: 36px
+        height: 36px
+
+  .form-row
+    flex-wrap: wrap
+
+  .form-row .form__group:not(:first-child)
+    margin-left: 0rem
+
+  .form__submit-row
+    flex-direction: column
+
+  .form__submit
+    margin-bottom: 2rem
+    padding-top: 1.4rem
+    padding-bottom: 1.4rem
+    width: 100%
+    // max-width: 32rem
+    font-size: 1.8rem
+
+  .form__agree-text
+    text-align: center
+
+  .calc-order__heading
+    margin-bottom: 3rem
+    font-size: 1.6rem
+    h2
+      margin-bottom: 1rem
+
+  .modal
+    .calc-order__heading
+      font-size: 1.4rem
+
+  .map-placement
+    padding-top: 3rem
+    height: 86rem
+    &__interlayer
+      display: block
+
+    .ymaps3x0--controls
+      justify-content: flex-end!important
+    .ymaps3x0--control
+      margin-bottom: 5rem!important
+
+  .map-placement__container
+    margin-left: calc(50vw - 210px)
+
+  .contacts-map-container
+    padding-bottom: 5rem
+
+  .contacts-map
+    height: 50rem
+    &-container
+      padding-top: 1rem
+
+  .d
+    &-block
+      &_xs
+        display: block
+    &-inline
+      &_xs
+        display: inline
+    &-none
+      &_xs
+        display: none
+
+@media (max-width: 479.98px)
+
+  .map-placement__container
+    display: block
+    margin-left: auto
+    margin-right: auto
+
+/* XXS */
+@media (max-width: 413.98px)
+  .container
+    max-width: 350px
+
+  .modal .section__heading_brand
+    p
+      margin-left: auto
+      margin-right: auto
+      max-width: 21rem
+
+  // .header__container
+  //   max-width: none
+  .navbar
+    padding-top: 2rem
+
+    .logo
+      margin-left: 1rem
+
+    &__social:not(:first-child)
+      margin-left: 6px
+
+  .modal__close
+    left: calc(50% - 8px)
+
+  .modal
+    .calc-order__heading
+      margin-bottom: 1.8rem
+
+    .form__textarea
+      min-height: auto
+
+  .calc-order__form-group
+    margin-bottom: 1.5rem
+  .form__label
+    margin-bottom: 0.5rem
+
+  .form__control
+    padding: 1.6rem 2.3rem
+
+  .form__label_type-file
+    padding-left: 3.5rem
+    position: relative
+
+  .form-screp
+    position: absolute
+    left: 0
+
+  .form__label_type-file
+    align-items: flex-start
+
+  .form__submit-row
+    margin-top: 1rem
+
+  .modal
+    &__inner
+      margin-top: 4rem
+      padding-top: 1.5rem
+      padding-left: 1.5rem
+      padding-right: 1.5rem
+      max-width: 32rem
+      max-height: 89vh
+
+  .d
+    &-block
+      &_xxs
+        display: block
+    &-inline
+      &_xxs
+        display: inline
+    &-none
+      &_xxs
+        display: none
+
+  .justify-start_xxs
+    justify-content: flex-start
+
+@media (max-width: 359.99px)
+  html
+    font-size: 8px
+
+  .menu-item-has-children::before, .menu-item-has-children::after
+    top: 1.9em
+
+/* IE */
+@media screen and (-ms-high-contrast: active), (-ms-high-contrast: none)
+  .preloader
+    display: none

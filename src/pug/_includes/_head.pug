@@ -1,0 +1,59 @@
+| 
+//  Basic Page Needs ==============================================
+meta(charset="UTF-8")
+title= page ? page.title : 'Укажите название страницы'
+meta(name="description", content= (page) ? page.descr : 'Укажите описание страницы')
+meta(name="author", content= (page) ? page.author : 'John Doe')
+meta(name="robots" content="index, follow")
+meta(name="theme-color", content= (themeColor) ? themeColor : '#000')
+
+
+|
+|
+//  Fonts preload ==================================================
+//- Перебор всех наименований шрифтов, указанных в переменной fontspreload файла _vars.pug
+each val in fontsPreload
+  link(rel="preload" as="font" href=`fonts/${val}` type="font/woff2" crossorigin="anonymous")
+
+
+|
+|
+//  Mobile Specific Metas ==================================================
+meta(name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no")
+
+
+|
+|
+//  CSS ==================================================
+//- link(rel="stylesheet" href="libs/fancybox.css")
+link(rel="stylesheet" href="css/style.css")
+
+
+
+
+//- СТИЛИ ДЛЯ ПОДДЕРЖКИ РАЗНЫХ ВЕРСИЙ IE 
+//-----------------------------------------------------
+
+//- Стили для IE >= 10
+//- правило не работает отсюда - т.к. подключаются в layout.scss
+//- link(rel="stylesheet" href="css/gte-ie10-style.css")
+
+//- Стили для IE < 10
+
+//- [if lt IE 10]><link rel="stylesheet" href="css/lt-ie10-style.css"><![endif]
+
+
+|
+|
+//  Favicons ==================================================
+//- Старый способ - подержка в IE10 
+//- link(rel="shortcut icon" href="/favicon.ico" type="image/x-icon")
+
+//- SVG иконка для вкладок, размер "любой"
+link(rel="icon" href="img/favicons/favicon.svg" sizes="any" type="image/svg+xml")
+//- Или .png иконка размерами 16x16 и 32x32-для ретины
+//- Touch иконка работает на iPad4,
+//- не работает svg, формат .png для Apple 180x180
+//- link(rel="apple-touch-icon" sizes="180x180" href="img/favicons/apple-touch-icon-180x180.png" type="image/png")
+//- Manifest пока в основном для touch иконок для Android - минимум 192x192
+link(rel="manifest" href="manifest.webmanifest")

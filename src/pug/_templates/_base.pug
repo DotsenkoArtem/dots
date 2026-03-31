@@ -1,5 +1,5 @@
 doctype html
-html(lang="ru")
+html(lang="ru" data-theme="dark")
 
 
   //- Common variables
@@ -17,6 +17,9 @@ html(lang="ru")
   head
     block head
       include ../_includes/_head.pug
+    //- Anti-FOUC: apply stored theme before paint
+    script.
+      try{var t=localStorage.getItem('bfd-theme');if(t)document.documentElement.setAttribute('data-theme',t);}catch(e){}
     if (ieBung)
       block ie-bung-styles
         include ../_includes/_ie-bung-styles.pug

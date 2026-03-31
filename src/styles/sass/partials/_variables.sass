@@ -7,20 +7,25 @@ $grid-style: true
 $gutter: 1.2rem
 
 // COLORS
+// Dark theme palette — Telegram Dark
+$color-bg-dark:     #17212b
+$color-bg-dark-alt: #232e3c
+$color-accent:      #5288c1
+$color-accent-hover:#4a7ab3
+$color-white:       #ffffff
+$color-text-dim:    rgba(255, 255, 255, 0.55)
+$color-sep:         rgba(255, 255, 255, 0.12)
 
-
+// Light theme palette — Telegram Light
+$color-bg-light:    #ffffff
+$color-bg-light-alt:#f4f4f5
+$color-text-dark:   #222222
+$color-text-dim-lt: rgba(0, 0, 0, 0.50)
 
 
 // TRANSITIONS
-
-
-// TEXT
-
-
-// LINKS
-
-
-// RADIUS
+$prim-transition: 0.3s ease
+$link-transition: 0.2s
 
 
 // TYPOGRAPHY
@@ -41,7 +46,9 @@ $ff-primary: -apple-system, OpenSans, BlinkMacSystemFont, "Segoe UI", Circe, san
 $ff-secondary: -apple-system, OpenSans, BlinkMacSystemFont, "Segoe UI", Circe, sans-serif
 
 // BUTTONS
-
+$btn-radius:    50px
+$btn-padding-y: 1.4rem
+$btn-padding-x: 3rem
 
 // MODAL
 // ------------------------------
@@ -50,15 +57,82 @@ $ff-secondary: -apple-system, OpenSans, BlinkMacSystemFont, "Segoe UI", Circe, s
 // ------------------------------
 
 
-:root
+// ─── Dark theme (default) — Telegram Dark ─────────────────────────────────────
+:root,
+[data-theme="light"]
   /* Colors */
-
-
+  --bg:              #{$color-bg-dark}
+  --bg-alt:          #{$color-bg-dark-alt}
+  --accent:          #{$color-accent}
+  --accent-hover:    #{$color-accent-hover}
+  --white-color:     #{$color-white}
+  --primary-color:   #{$color-accent}
+  --secondary-color: #{$color-white}
+  --text-primary-color: #{$color-white}
+  --text-dim:        #{$color-text-dim}
+  --sep-color:       #{$color-sep}
+  --link-color:      #71bafa
+  --header-bg:       rgba(23, 33, 43, 0.10)
+  --header-bg-scroll: rgba(23, 33, 43, 0.55)
+  --header-border:   rgba(255, 255, 255, 0.06)
+  --hero-overlay:    linear-gradient(90deg, #{$color-bg-dark} 40%, rgba(23, 33, 43, 0.55) 70%, transparent 100%)
+  --hero-footer-bg:  rgba(0, 0, 0, 0.22)
+  --toggle-track-bg: rgba(255, 255, 255, 0.12)
+  --toggle-icon:     rgba(255, 255, 255, 0.45)
 
   /* Grid */
   --gutter: #{$gutter}
 
-
   /* Typography */
   --ff-primary: #{$ff-primary}
   --ff-secondary: #{$ff-secondary}
+
+  /* Transitions */
+  --prim-transition: #{$prim-transition}
+  --link-transition: #{$link-transition}
+
+  /* Buttons */
+  --btn-radius:    #{$btn-radius}
+  --btn-padding-y: #{$btn-padding-y}
+  --btn-padding-x: #{$btn-padding-x}
+  --btn-color:     #{$color-white}
+  --btn-prim-bg:   #{$color-accent}
+  --btn-second-bg: #{$color-accent-hover}
+
+  /* Misc */
+  --main-radius: 8px
+  --separ-color: #{$color-sep}
+  --breadcrumb-color: #{$color-text-dim}
+  --form-input-bg: rgba(255, 255, 255, 0.07)
+  --input-focus-border-color: #{$color-accent}
+  --input-placeholder-color: rgba(255, 255, 255, 0.30)
+  --text-accent-primary: #{$color-accent}
+
+
+// ─── Light theme — Telegram Light ─────────────────────────────────────────────
+[data-theme="dark"]
+  --bg:              #{$color-bg-light}
+  --bg-alt:          #{$color-bg-light-alt}
+  --accent:          #2481cc
+  --accent-hover:    #1d73ba
+  --white-color:     #{$color-white}
+  --primary-color:   #2481cc
+  --secondary-color: #{$color-text-dark}
+  --text-primary-color: #{$color-text-dark}
+  --text-dim:        #{$color-text-dim-lt}
+  --sep-color:       rgba(0, 0, 0, 0.12)
+  --link-color:      #2481cc
+  --header-bg:       rgba(255, 255, 255, 0.10)
+  --header-bg-scroll: rgba(255, 255, 255, 0.55)
+  --header-border:   rgba(0, 0, 0, 0.07)
+  --hero-overlay:    linear-gradient(90deg, #{$color-bg-light} 40%, rgba(255, 255, 255, 0.55) 70%, transparent 100%)
+  --hero-footer-bg:  rgba(0, 0, 0, 0.06)
+  --toggle-track-bg: rgba(0, 0, 0, 0.09)
+  --toggle-icon:     rgba(0, 0, 0, 0.40)
+  --btn-color:       #{$color-white}
+  --btn-prim-bg:     #2481cc
+  --btn-second-bg:   #1d73ba
+  --form-input-bg:   rgba(0, 0, 0, 0.04)
+  --input-focus-border-color: #2481cc
+  --input-placeholder-color:  rgba(0, 0, 0, 0.30)
+  --text-accent-primary: #2481cc

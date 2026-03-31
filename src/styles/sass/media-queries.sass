@@ -4,9 +4,13 @@
   
 
 @media (max-width: 1699.98px)
+  .hero
+    &__heading-word
+      font-size: clamp(5.5rem, 8vw, 12rem)
 
 
 @media (max-width: 1499.98px)
+
 
 /* XL */
 @media (max-width: 1399.98px)
@@ -39,6 +43,13 @@
     &-none
       &_xl
         display: none
+
+  .hero
+    &__body
+      gap: 2.4rem
+    &__description
+      font-size: 1.3rem
+
 
 @media (max-width: 1299.98px)
 
@@ -119,6 +130,15 @@
       left: calc( 5.8em + .4em )
       right: auto
 
+  .header
+    &__phone,
+    &__email
+      font-size: 1.3rem
+
+  .hero
+    &__container
+      padding-bottom: 5rem
+
 @media (max-width: 1299.98px) and (min-width: 992px) and (hover:hover) and (pointer:fine)
   .menu-item-has-children
     &:hover
@@ -154,6 +174,23 @@
     &-none
       &_lg
         display: none
+
+  .header
+    &__contacts
+      gap: 0.8rem
+    &__phone,
+    &__email
+      font-size: 1.2rem
+
+  .hero
+    &__body
+      max-width: 56rem
+      gap: 2rem
+    &__heading-word
+      font-size: clamp(5rem, 7.5vw, 10rem)
+    &__description
+      font-size: 1.2rem
+
 
 @media (max-width: 1137.98px)
   .map-placement__container
@@ -197,6 +234,40 @@
       max-width: 72rem
     &_md
       max-width: 100%
+
+  .header
+    &__container
+      height: 6rem
+    &__phone
+      display: none
+    &__sep
+      display: none
+
+  .hero
+    &__bg
+      --hero-overlay: linear-gradient(180deg, rgba(11, 29, 42, 0.5) 0%, rgba(11, 29, 42, 0.85) 60%)
+
+      img
+        object-position: 70% center
+
+    &__container
+      padding-top: 6rem
+      padding-bottom: 4rem
+      align-items: flex-end
+      flex-wrap: wrap
+      gap: 3rem
+
+    &__body
+      width: 100%
+      max-width: 100%
+      gap: 2rem
+
+    &__heading-word
+      font-size: clamp(4.8rem, 8vw, 8rem)
+
+    &__description
+      max-width: 100%
+
 
   .menu-item-has-children
     &>a,
@@ -339,6 +410,31 @@
       &_sm
         display: none
 
+  .header
+    &__container
+      height: 5.6rem
+    &__email
+      font-size: 1.1rem
+    &__sep
+      display: none
+    &__phone
+      display: none
+
+  .hero
+    &__container
+      flex-direction: column
+      align-items: flex-start
+      justify-content: flex-end
+      padding-bottom: 3rem
+      gap: 2.4rem
+
+    &__heading-word
+      font-size: clamp(4.2rem, 9vw, 7rem)
+
+    &__description
+      font-size: 1.1rem
+
+
 @media (max-width: 767.98px) and (orientation: portrait)
   .modal
     &__inner
@@ -434,6 +530,40 @@
       &_xs
         display: none
 
+  .header
+    &__container
+      height: 5.2rem
+    &__email
+      display: none
+
+  .theme-toggle
+    padding: 0.5rem 0.8rem
+    gap: 0.6rem
+    &__track
+      width: 2.8rem
+
+  .hero
+    &__container
+      padding-bottom: 2.4rem
+
+    &__heading-word
+      font-size: clamp(3.8rem, 10vw, 6rem)
+
+    &__description
+      font-size: 1rem
+
+    &__footer-inner
+      flex-direction: column
+      align-items: flex-start
+      height: auto
+      gap: 0.4rem
+      padding-top: 1rem
+      padding-bottom: 1rem
+
+    &__footer-contact
+      font-size: 1.1rem
+
+
 @media (max-width: 479.98px)
 
   .map-placement__container
@@ -517,6 +647,18 @@
 
   .justify-start_xxs
     justify-content: flex-start
+
+  .hero
+    &__heading-word
+      font-size: clamp(3.2rem, 10.5vw, 5rem)
+
+    &__description
+      font-size: 0.95rem
+
+
+  .logo
+    &__text
+      font-size: 1.7rem
 
 @media (max-width: 359.99px)
   html

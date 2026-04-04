@@ -191,6 +191,9 @@
     &__description
       font-size: 1.2rem
 
+  .card
+    width: calc(50% - 1rem)
+
 
 @media (max-width: 1137.98px)
   .map-placement__container
@@ -267,6 +270,24 @@
 
     &__description
       max-width: 100%
+
+  .cases__grid
+    gap: 1.5rem
+
+  .card
+    width: calc(50% - 0.75rem)
+    min-height: 20rem
+
+    &__inner
+      min-height: 20rem
+
+    &__content
+      min-height: 20rem
+
+    &__descr
+      p
+        font-size: 1.1em
+        margin-bottom: 1.5rem
 
 
   .menu-item-has-children
@@ -434,6 +455,48 @@
     &__description
       font-size: 1.1rem
 
+  .cases__grid
+    flex-direction: column
+    align-items: center
+    gap: 2rem
+
+  .card
+    width: 100%
+    max-width: 52rem
+    min-height: auto
+
+    &__inner
+      min-height: 0
+      height: auto
+
+    &__content
+      flex-direction: column
+      height: auto
+      min-height: 0
+
+    &__img
+      width: 100%
+      height: 18rem
+      border-right: none
+      border-bottom: solid 1px #050505
+
+    &__descr
+      width: 100%
+
+  .footer
+    &__contacts
+      flex-direction: column
+      align-items: flex-start
+      height: auto
+      gap: 0.8rem
+      padding-block: 1.5rem
+
+    &__bottom-inner
+      flex-direction: column
+      align-items: flex-start
+      gap: 0.5rem
+      padding-block: 1rem
+
 
 @media (max-width: 767.98px) and (orientation: portrait)
   .modal
@@ -444,7 +507,7 @@
 @media (max-width: 575.98px)
 
   .container
-    max-width: 410px
+    max-width: 41rem
     &_sm
       max-width: 100%
 
@@ -563,6 +626,24 @@
     &__footer-contact
       font-size: 1.1rem
 
+  .cases__grid
+    padding: 0.8rem
+
+  .card
+    max-width: 100%
+
+    &__img
+      height: 15rem
+
+    &__descr
+      padding: 1.2rem
+
+      h3
+        font-size: 1.8em
+
+      p
+        font-size: 1.1em
+
 
 @media (max-width: 479.98px)
 
@@ -574,7 +655,7 @@
 /* XXS */
 @media (max-width: 413.98px)
   .container
-    max-width: 350px
+    max-width: 35rem
 
   .modal .section__heading_brand
     p
@@ -660,12 +741,49 @@
     &__text
       font-size: 1.7rem
 
+  .cases__grid
+    padding: 0.5rem
+
+  .card
+    &__img
+      height: 13rem
+
+    &__descr
+      p
+        font-size: 1em
+        margin-bottom: 1rem
+
 @media (max-width: 359.99px)
   html
     font-size: 8px
 
   .menu-item-has-children::before, .menu-item-has-children::after
     top: 1.9em
+
+  .header
+    &__container
+      gap: 1rem
+
+    &__logo
+      max-width: 10rem
+
+  .social-link
+    width: 28px
+    height: 28px
+
+  .theme-toggle
+    padding: 0.4rem 0.6rem
+    gap: 0.5rem
+
+    &__track
+      width: 2.4rem
+
+  .hero
+    &__description
+      font-size: 1.3rem
+
+  .cases__grid
+    padding: 0.4rem
 
 /* IE */
 @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none)

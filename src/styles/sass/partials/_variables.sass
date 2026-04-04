@@ -59,7 +59,7 @@ $btn-padding-x: 3rem
 
 // ─── Dark theme (default) — Telegram Dark ─────────────────────────────────────
 :root,
-[data-theme="light"]
+[data-theme="dark"]
   /* Colors */
   --bg:              #{$color-bg-dark}
   --bg-alt:          #{$color-bg-dark-alt}
@@ -75,8 +75,11 @@ $btn-padding-x: 3rem
   --header-bg:       rgba(23, 33, 43, 0.10)
   --header-bg-scroll: rgba(23, 33, 43, 0.55)
   --header-border:   rgba(255, 255, 255, 0.06)
-  --hero-overlay:    linear-gradient(90deg, #{$color-bg-dark} 40%, rgba(23, 33, 43, 0.55) 70%, transparent 100%)
-  --hero-footer-bg:  rgba(0, 0, 0, 0.22)
+  --hero-overlay:    rgba(0, 0, 0, 0.01)
+  --hero-overlay-backdrop-filter: none
+  --hero-bg-bg: none
+  --hero-bg-filter: none
+  --hero-footer-bg:  rgba(7, 4, 4, 0.22)
   --toggle-track-bg: rgba(255, 255, 255, 0.12)
   --toggle-icon:     rgba(255, 255, 255, 0.45)
 
@@ -99,6 +102,9 @@ $btn-padding-x: 3rem
   --btn-prim-bg:   #{$color-accent}
   --btn-second-bg: #{$color-accent-hover}
 
+  /* Sections */
+  --section-padding: 7rem
+
   /* Misc */
   --main-radius: 8px
   --separ-color: #{$color-sep}
@@ -110,7 +116,7 @@ $btn-padding-x: 3rem
 
 
 // ─── Light theme — Telegram Light ─────────────────────────────────────────────
-[data-theme="dark"]
+[data-theme="light"]
   --bg:              #{$color-bg-light}
   --bg-alt:          #{$color-bg-light-alt}
   --accent:          #2481cc
@@ -125,7 +131,11 @@ $btn-padding-x: 3rem
   --header-bg:       rgba(255, 255, 255, 0.10)
   --header-bg-scroll: rgba(255, 255, 255, 0.55)
   --header-border:   rgba(0, 0, 0, 0.07)
-  --hero-overlay:    linear-gradient(90deg, #{$color-bg-light} 40%, rgba(255, 255, 255, 0.55) 70%, transparent 100%)
+  // --hero-overlay:    linear-gradient(90deg, #{$color-bg-light} 40%, rgba(255, 255, 255, 0.55) 70%, transparent 100%)
+  --hero-overlay:    rgba(255, 255, 255, 0.8)
+  --hero-overlay-backdrop-filter: grayscale(1)
+  --hero-bg-bg: url(../img/hero-bg-draft.webp) center no-repeat
+  --hero-bg-filter: grayscale(1) invert()
   --hero-footer-bg:  rgba(0, 0, 0, 0.06)
   --toggle-track-bg: rgba(0, 0, 0, 0.09)
   --toggle-icon:     rgba(0, 0, 0, 0.40)

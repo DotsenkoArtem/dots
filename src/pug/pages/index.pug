@@ -28,5 +28,30 @@ block main
 
       .hero__footer
         .container.hero__footer-inner
-          a.hero__footer-contact(href="mailto:info@bfd.su") INFO@BFD.SU
-          a.hero__footer-contact(href="tel:+74951501720") +7 495 150-17-20
+          a.hero__footer-contact(href="mailto:infodots@yandex.ru") INFODOTS@YANDEX.RU
+          a.hero__footer-contact(href="tel:+78002000888") +7 800 200-08-88
+
+
+
+
+
+    mixin 3d-card(imgUrl)
+      .card
+        .card__inner
+          .card__content
+            .card__img 
+                img(src=imgUrl, alt="Логтип компании Nike")
+            .card__descr
+              h3 Nike Logo
+              p Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsum vel voluptates temporibus cupiditate eos? Temporibus, eos cum ullam sunt nesciunt ducimus laborum velit ut autem.
+              .btn.btn_black Посмотреть
+
+
+    section.cases
+      .container.cases__container
+        .cases__grid
+          
+          +3d-card("img/nike-logo.jpg")
+          +3d-card("img/nike-logo.jpg")
+          +3d-card("img/nike-logo.jpg")
+          +3d-card("img/nike-logo.jpg")

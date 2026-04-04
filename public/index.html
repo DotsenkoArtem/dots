@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="ru" data-theme="dark">
+	<head> 
+		<!--  Basic Page Needs ==============================================-->
+		<meta charset="UTF-8">
+		<title>Dots....</title>
+		<meta name="description" content="">
+		<meta name="author" content="Artem Dots">
+		<meta name="robots" content="index, follow">
+		<meta name="theme-color" content="#506690">
+		
+		<!--  Fonts preload ==================================================-->
+		<link rel="preload" as="font" href="fonts/OpenSans-Light.woff2" type="font/woff2" crossorigin="anonymous">
+		<link rel="preload" as="font" href="fonts/OpenSans-Regular.woff2" type="font/woff2" crossorigin="anonymous">
+		<link rel="preload" as="font" href="fonts/OpenSans-SemiBold.woff2" type="font/woff2" crossorigin="anonymous">
+		<link rel="preload" as="font" href="fonts/OpenSans-Bold.woff2" type="font/woff2" crossorigin="anonymous">
+		<link rel="preload" as="font" href="fonts/OpenSans-ExtraBold.woff2" type="font/woff2" crossorigin="anonymous">
+		
+		<!--  Mobile Specific Metas ==================================================-->
+		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+		
+		<!--  CSS ==================================================-->
+		<link rel="stylesheet" href="css/style.css">
+		
+		<!--  Favicons ==================================================-->
+		<link rel="icon" href="img/favicons/favicon.svg" sizes="any" type="image/svg+xml">
+		<link rel="manifest" href="manifest.webmanifest">
+		<script>try{var t=localStorage.getItem('bfd-theme');if(t)document.documentElement.setAttribute('data-theme',t);}catch(e){}</script>
+	</head>
+	<body> 
+		<div class="preloader" id="preloader"></div>
+		<div class="wrapper" id="wrapper">
+			
+			
+			<!--  Header ================================================== -->
+			<header class="header js-header">
+				<div class="container header__container"><a class="header__logo logo" href="index.html" aria-label="BigFish — на главную"><svg class="logo__icon" xmlns="http://www.w3.org/2000/svg" width="266" height="100" viewBox="0 0 266 100" fill="none">
+<path class="logo__icon-path" d="M75.4944 47.9615C75.4944 63.688 71.2927 75.5897 62.8895 83.6667C54.4862 91.7009 42.1426 95.7179 25.8586 95.7179H3V2H28.7975C44.0366 2 55.6183 5.91026 63.5426 13.7308C71.5104 21.5513 75.4944 32.9615 75.4944 47.9615ZM68.2449 48.2179C68.2449 34.7991 64.7617 24.7137 57.7953 17.9615C50.8724 11.1667 40.684 7.76923 27.2301 7.76923H9.66164V89.9487H25.4667C53.9855 89.9487 68.2449 76.0385 68.2449 48.2179Z" fill="#F5F5F5"/>
+<path class="logo__icon-path" d="M154.52 60.782C154.52 72.1496 151.711 81.0385 146.095 87.4487C140.478 93.8162 132.728 97 122.844 97C116.618 97 111.132 95.5256 106.386 92.5769C101.64 89.6282 98.0046 85.3974 95.4793 79.8846C92.954 74.3718 91.6913 68.0043 91.6913 60.782C91.6913 49.4145 94.4996 40.5684 100.116 34.2436C105.733 27.8761 113.44 24.6923 123.236 24.6923C132.989 24.6923 140.63 27.9188 146.16 34.3718C151.733 40.7821 154.52 49.5855 154.52 60.782ZM98.4835 60.782C98.4835 70.3547 100.617 77.8333 104.884 83.2179C109.194 88.5598 115.268 91.2308 123.106 91.2308C130.943 91.2308 136.995 88.5598 141.262 83.2179C145.572 77.8333 147.727 70.3547 147.727 60.782C147.727 51.1667 145.55 43.7094 141.196 38.4103C136.886 33.1111 130.812 30.4615 122.975 30.4615C115.138 30.4615 109.086 33.1111 104.819 38.4103C100.595 43.6667 98.4835 51.1239 98.4835 60.782Z" fill="#F5F5F5"/>
+<path class="logo__icon-path" d="M192.922 91.359C197.015 91.359 200.585 91.0171 203.633 90.3333V95.4615C200.498 96.4872 196.884 97 192.792 97C186.522 97 181.885 95.3547 178.88 92.0641C175.92 88.7735 174.439 83.6026 174.439 76.5513V31.5513H163.924V27.8333L174.439 24.9487L177.705 9.17949H181.036V26.0385H201.87V31.5513H181.036V75.6538C181.036 80.9957 181.994 84.9487 183.909 87.5128C185.825 90.0769 188.829 91.359 192.922 91.359Z" fill="#F5F5F5"/>
+<path class="logo__icon-path" d="M263 77.5769C263 83.8162 260.584 88.6239 255.751 92C250.918 95.3333 244.06 97 235.178 97C225.686 97 218.154 95.5684 212.581 92.7051V85.8462C219.721 89.3504 227.254 91.1026 235.178 91.1026C242.188 91.1026 247.5 89.9701 251.114 87.7051C254.771 85.3974 256.6 82.3419 256.6 78.5385C256.6 75.0342 255.141 72.0855 252.224 69.6923C249.35 67.2991 244.604 64.9487 237.986 62.641C230.889 60.1197 225.904 57.9615 223.03 56.1667C220.156 54.3291 217.979 52.2778 216.499 50.0128C215.062 47.7051 214.344 44.906 214.344 41.6154C214.344 36.4017 216.564 32.2778 221.006 29.2436C225.49 26.2094 231.738 24.6923 239.75 24.6923C247.413 24.6923 254.684 26.1026 261.563 28.9231L259.147 34.6923C252.18 31.8718 245.715 30.4615 239.75 30.4615C233.959 30.4615 229.365 31.4017 225.969 33.2821C222.573 35.1624 220.875 37.7692 220.875 41.1026C220.875 44.735 222.181 47.641 224.794 49.8205C227.449 52 232.609 54.4359 240.272 57.1282C246.672 59.3932 251.331 61.4444 254.248 63.282C257.166 65.0769 259.343 67.1282 260.779 69.4359C262.26 71.7436 263 74.4573 263 77.5769Z" fill="#F5F5F5"/>
+</svg>
+						<div class="logo__icon-dots">
+							<div class="logo__icon-dot"></div>
+							<div class="logo__icon-dot"></div>
+							<div class="logo__icon-dot"></div>
+							<div class="logo__icon-dot"></div>
+						</div></a>
+					<div class="header__contacts"><a class="header__kwork social-link social-link--kwork" href="https://kwork.ru/user/artem_dots" target="_blank">
+							 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="17" viewBox="0 0 16 17" fill="none">
+<path class="social-icon__path social-icon__path--kwork" d="M15.2864 0.205811L8.83035 7.75659L8.69559 7.91479L8.82547 8.07593L15.7581 16.6755H11.9095L6.80399 9.98315L6.61551 9.73608L6.41434 9.97241L5.07645 11.5515L5.01688 11.6208V16.6755H1.86453V12.1482L11.4388 0.205811H15.2864Z" stroke-width="0.5"/>
+<path class="social-icon__path" fill-rule="evenodd" clip-rule="evenodd" d="M5.26682 3.47387L1.61455 7.89047V2.06967H0V-0.130981H5.26682V3.47387Z"/>
+</svg></a><a class="header__tg social-link" href="https://t.me/artem_dots" target="_blank">
+							 <svg class="social-icon header__icon" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true" focusable="false">
+<g transform="translate(8 8) scale(1.33) translate(-8 -8)">
+<path class="social-icon__path" d="M8.28672 5.90599C7.50861 6.22963 5.95346 6.8995 3.6213 7.91558C3.2426 8.06618 3.04421 8.21351 3.02615 8.35757C2.99563 8.60103 3.30052 8.6969 3.71569 8.82745C3.77216 8.8452 3.83068 8.8636 3.89067 8.8831C4.29913 9.01588 4.84859 9.17121 5.13423 9.17738C5.39334 9.18298 5.68253 9.07616 6.0018 8.85692C8.18081 7.38603 9.30563 6.64258 9.37625 6.62655C9.42607 6.61524 9.49511 6.60102 9.54188 6.6426C9.58866 6.68418 9.58406 6.76291 9.57911 6.78404C9.5489 6.9128 8.35212 8.02543 7.73279 8.60121C7.53971 8.78071 7.40276 8.90804 7.37476 8.93712C7.31204 9.00226 7.24812 9.06388 7.18669 9.1231C6.80722 9.48891 6.52265 9.76324 7.20245 10.2112C7.52913 10.4265 7.79055 10.6045 8.05134 10.7821C8.33616 10.9761 8.62023 11.1695 8.98778 11.4105C9.08142 11.4718 9.17086 11.5356 9.25796 11.5977C9.58942 11.834 9.88721 12.0463 10.2551 12.0124C10.4689 11.9928 10.6897 11.7918 10.8018 11.1923C11.0668 9.77545 11.5878 6.70567 11.7082 5.44069C11.7187 5.32986 11.7055 5.18802 11.6948 5.12576C11.6842 5.06349 11.6619 4.97478 11.581 4.90911C11.4851 4.83133 11.3371 4.81493 11.2709 4.8161C10.9701 4.8214 10.5084 4.98192 8.28672 5.90599Z"/>
+</g>
+</svg></a><span class="header__sep" aria-hidden="true">/</span><a class="header__email" href="mailto:infodots@yandex.ru">INFODOTS@YANDEX.RU</a></div>
+					<div class="header__controls">
+						<button class="theme-toggle js-theme-toggle" type="button" aria-label="Переключить тему" data-theme-toggle><span class="theme-toggle__icon theme-toggle__icon_sun" aria-hidden="true">
+								<svg width="18" height="18" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+									<circle cx="12" cy="12" r="4" stroke="currentColor" stroke-width="2"></circle>
+									<path d="M12 2v2M12 20v2M2 12h2M20 12h2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41" stroke="currentColor" stroke-width="2" stroke-linecap="round"></path>
+								</svg></span><span class="theme-toggle__track"><span class="theme-toggle__indicator"></span></span><span class="theme-toggle__icon theme-toggle__icon_moon" aria-hidden="true">
+								<svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+									<path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+								</svg></span></button>
+					</div>
+				</div>
+			</header>
+			
+			<main>
+				<section class="hero has-bg">
+					<div class="hero__bg bg bg_cover">
+						<picture>
+							<source media="(max-width: 767px)" srcset="img/hero-bg.png" type="image/png"><img src="img/hero-bg.png" alt="Dots...." loading="eager">
+						</picture>
+					</div>
+					<div class="container hero__container">
+						<div class="hero__body">
+							<h1 class="hero__heading"><span class="hero__heading-line"><span class="hero__heading-word hero__heading-word_light">WEB</span>&nbsp;<span class="hero__heading-word hero__heading-word_bold">STUDIO</span></span><span class="hero__heading-line"><span class="hero__heading-word hero__heading-word_light">DIGITAL</span>&nbsp;<span class="hero__heading-word hero__heading-word_bold">DESIGN</span></span></h1>
+							<p class="hero__description">Веб-студия — создаём сайты, лендинги, интернет-магазины, web-приложения, crm-системы</p>
+						</div>
+					</div>
+					<div class="hero__footer">
+						<div class="container hero__footer-inner"><a class="hero__footer-contact" href="mailto:infodots@yandex.ru">INFODOTS@YANDEX.RU</a><a class="hero__footer-contact" href="tel:+78002000888">+7 800 200-08-88</a></div>
+					</div>
+				</section>
+				<section class="cases">
+					<div class="container cases__container">
+						<div class="cases__grid">
+											<div class="card">
+												<div class="card__inner">
+													<div class="card__content">
+														<div class="card__img"> <img src="img/nike-logo.jpg" alt="Логтип компании Nike"></div>
+														<div class="card__descr">
+															<h3>Nike Logo</h3>
+															<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsum vel voluptates temporibus cupiditate eos? Temporibus, eos cum ullam sunt nesciunt ducimus laborum velit ut autem.</p>
+															<div class="btn btn_black">Посмотреть</div>
+														</div>
+													</div>
+												</div>
+											</div>
+											<div class="card">
+												<div class="card__inner">
+													<div class="card__content">
+														<div class="card__img"> <img src="img/nike-logo.jpg" alt="Логтип компании Nike"></div>
+														<div class="card__descr">
+															<h3>Nike Logo</h3>
+															<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsum vel voluptates temporibus cupiditate eos? Temporibus, eos cum ullam sunt nesciunt ducimus laborum velit ut autem.</p>
+															<div class="btn btn_black">Посмотреть</div>
+														</div>
+													</div>
+												</div>
+											</div>
+											<div class="card">
+												<div class="card__inner">
+													<div class="card__content">
+														<div class="card__img"> <img src="img/nike-logo.jpg" alt="Логтип компании Nike"></div>
+														<div class="card__descr">
+															<h3>Nike Logo</h3>
+															<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsum vel voluptates temporibus cupiditate eos? Temporibus, eos cum ullam sunt nesciunt ducimus laborum velit ut autem.</p>
+															<div class="btn btn_black">Посмотреть</div>
+														</div>
+													</div>
+												</div>
+											</div>
+											<div class="card">
+												<div class="card__inner">
+													<div class="card__content">
+														<div class="card__img"> <img src="img/nike-logo.jpg" alt="Логтип компании Nike"></div>
+														<div class="card__descr">
+															<h3>Nike Logo</h3>
+															<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsum vel voluptates temporibus cupiditate eos? Temporibus, eos cum ullam sunt nesciunt ducimus laborum velit ut autem.</p>
+															<div class="btn btn_black">Посмотреть</div>
+														</div>
+													</div>
+												</div>
+											</div>
+						</div>
+					</div>
+				</section>
+			</main>
+			
+			<!--  Footer ================================================== -->
+			<footer class="footer" id="footer">
+				<div class="container footer__container">
+					<div class="footer__contacts"><a class="footer__contact" href="mailto:infodots@yandex.ru">INFODOTS@YANDEX.RU</a><a class="footer__contact" href="tel:+78002000888">+7 800 200-08-88</a></div>
+				</div>
+				<div class="footer__bottom">
+					<div class="container footer__bottom-inner">
+						<div class="footer__bottom-left-text">© 2026 Все права защищены</div>
+						<div class="footer__bottom-left-text">Разработано в Web Studio</div>
+					</div>
+				</div>
+			</footer>
+			
+		</div>
+		
+		<!-- Scripts ================================================== -->
+		<script src="js/script.js"></script>
+	</body>
+</html>

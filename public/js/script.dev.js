@@ -223,3 +223,17 @@ try {
 } finally {
   _iterator.f();
 }
+window.addEventListener('load', function () {
+  setAnimationDelay('.hero__heading-line', '.hero__heading-word-letter', .95, 0.025);
+});
+function setAnimationDelay(parentSelector, selector, delay, step) {
+  var parent = document.querySelectorAll(parentSelector);
+  if (!parent) return;
+  parent.forEach(function (item) {
+    var element = item.querySelectorAll(selector);
+    if (!element) return;
+    for (var i = 0; i < element.length; i++) {
+      element[i].style.animationDelay = "".concat(delay + i * step, "s");
+    }
+  });
+}

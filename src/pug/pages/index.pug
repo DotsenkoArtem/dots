@@ -14,13 +14,35 @@ block main
         .hero__body
           h1.hero__heading
             span.hero__heading-line
-              span.hero__heading-word.hero__heading-word_light WEB
+              span.hero__heading-word.hero__heading-word_light 
+                span.hero__heading-word-letter W 
+                span.hero__heading-word-letter E
+                span.hero__heading-word-letter B
               | &nbsp;
-              span.hero__heading-word.hero__heading-word_bold STUDIO
+              span.hero__heading-word.hero__heading-word_bold 
+                span.hero__heading-word-letter S
+                span.hero__heading-word-letter T
+                span.hero__heading-word-letter U
+                span.hero__heading-word-letter D
+                span.hero__heading-word-letter I
+                span.hero__heading-word-letter O
             span.hero__heading-line
-              span.hero__heading-word.hero__heading-word_light DIGITAL
+              span.hero__heading-word.hero__heading-word_light 
+                span.hero__heading-word-letter D
+                span.hero__heading-word-letter I
+                span.hero__heading-word-letter G
+                span.hero__heading-word-letter I
+                span.hero__heading-word-letter T
+                span.hero__heading-word-letter A
+                span.hero__heading-word-letter L
               | &nbsp;
-              span.hero__heading-word.hero__heading-word_bold DESIGN
+              span.hero__heading-word.hero__heading-word_bold 
+                span.hero__heading-word-letter D
+                span.hero__heading-word-letter E
+                span.hero__heading-word-letter S
+                span.hero__heading-word-letter I
+                span.hero__heading-word-letter G
+                span.hero__heading-word-letter N
 
           p.hero__description
             | Веб-студия — создаём сайты, лендинги, интернет-магазины, web-приложения, crm-системы
@@ -43,7 +65,6 @@ block main
                 img(src=imgUrl, alt="Логтип компании Nike")
             .card__descr
               h3 Nike Logo
-              p Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsum vel voluptates temporibus cupiditate eos? Temporibus, eos cum ullam sunt nesciunt ducimus laborum velit ut autem.
               .btn.btn_black Посмотреть
 
 
@@ -51,6 +72,8 @@ block main
       .container.cases__container
         .cases__grid
           
+          +3d-card("img/nike-logo.jpg")
+          +3d-card("img/nike-logo.jpg")
           +3d-card("img/nike-logo.jpg")
           +3d-card("img/nike-logo.jpg")
           +3d-card("img/nike-logo.jpg")

@@ -41,25 +41,29 @@
 // ─── Hero entrance classes ────────────────────────────────────────────────────
 
 .hero
+  --animation-delay-ratio: .25s
   &__bg
     animation: heroBgReveal 1.2s cubic-bezier(0.22, 1, 0.36, 1) both
 
   &__heading-line
-    overflow: hidden
+    // overflow: hidden
 
     &:nth-child(1)
-      .hero__heading-word
-        animation: heroFadeIn 0.8s cubic-bezier(0.22, 1, 0.36, 1) 0.2s both
+      .hero__heading-word-letter
+        // animation: heroFadeIn 1.5s cubic-bezier(0.22, 1, 0.36, 1) calc(.7s + 1*var(--animation-delay-ratio)) both
+        animation: heroFadeIn 1.5s cubic-bezier(0.22, 1, 0.36, 1)  both
 
     &:nth-child(2)
-      .hero__heading-word
-        animation: heroFadeIn 0.8s cubic-bezier(0.22, 1, 0.36, 1) 0.38s both
+      .hero__heading-word-letter
+        // animation: heroFadeIn 1.5s cubic-bezier(0.22, 1, 0.36, 1) calc(.7s + 1*var(--animation-delay-ratio)) both
+        animation: heroFadeIn 1.5s cubic-bezier(0.22, 1, 0.36, 1)  both
 
   &__description
-    animation: heroFadeIn 0.7s cubic-bezier(0.22, 1, 0.36, 1) 0.56s both
+    // animation: heroFadeIn 0.7s cubic-bezier(0.22, 1, 0.36, 1) 0.56s both
+    animation: heroFadeIn 0.7s cubic-bezier(0.22, 1, 0.36, 1) calc(1.2s + 3*var(--animation-delay-ratio)) both
 
   &__footer
-    animation: heroFadeIn 0.6s cubic-bezier(0.22, 1, 0.36, 1) 0.7s both
+    // animation: heroFadeIn 0.6s cubic-bezier(0.22, 1, 0.36, 1) 4.2s both
 
 
 // ─── Header entrance ──────────────────────────────────────────────────────────

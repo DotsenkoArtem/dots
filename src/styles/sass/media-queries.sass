@@ -5,7 +5,7 @@
 
 @media (max-width: 1699.98px)
   .hero
-    &__heading-word
+    &__heading
       font-size: clamp(5.5rem, 8vw, 12rem)
 
 
@@ -57,9 +57,6 @@
     &> .menu-item
       padding-top: 1.8rem
 
-  .logo
-    margin-left: 20px
-    margin-right: auto
 
   .menu-mobile
     position: fixed
@@ -176,6 +173,10 @@
         display: none
 
   .header
+    --logo-max-width: 11rem
+
+
+
     &__contacts
       gap: 0.8rem
     &__phone,
@@ -184,9 +185,8 @@
 
   .hero
     &__body
-      max-width: 56rem
       gap: 2rem
-    &__heading-word
+    &__heading
       font-size: clamp(5rem, 7.5vw, 10rem)
     &__description
       font-size: 1.2rem
@@ -230,6 +230,7 @@
 
 /* MD */
 @media (max-width: 991.98px)
+
   .container
     &,
     &_md,
@@ -248,8 +249,6 @@
 
   .hero
     &__bg
-      --hero-overlay: linear-gradient(180deg, rgba(11, 29, 42, 0.5) 0%, rgba(11, 29, 42, 0.85) 60%)
-
       img
         object-position: 70% center
 
@@ -265,7 +264,7 @@
       max-width: 100%
       gap: 2rem
 
-    &__heading-word
+    &__heading
       font-size: clamp(4.8rem, 8vw, 8rem)
 
     &__description
@@ -377,6 +376,18 @@
 
 /* SM */
 @media (max-width: 767.98px)
+
+  :root,
+  [data-theme="dark"]
+    /* Colors */
+    --hero-overlay: linear-gradient(to bottom, rgba(0,0,0,0.12) 0%, rgba(0,0,0,0.12) 70%, rgba(23, 33, 43, 1) 100%);
+
+
+  [data-theme=light] 
+    --hero-overlay: linear-gradient(to bottom, rgba(255,255,255,0.12) 0%, rgba(255,255,255,0.12) 55%, rgba(255,255,255,0.95) 80%, rgba(255, 255, 255, 0.95) 100%);
+
+
+
   // html
   // 	font-size: 7px
   // 
@@ -387,28 +398,21 @@
     &_md
       max-width: 100%
 
+
+
   .navbar
     flex-wrap: wrap
     &__contacts
       &-right
         width: 100%
-        order: 1
         display: flex
         justify-content: space-between
         align-items: center
       &-left
-        order: 4
         margin-right: 0
 
-  .menu-mobile
-    &-trigger
-      order: 2
 
-  .logo
-    order: 3
 
-  .map-placement__container
-    margin-left: calc(50vw - 275px)
 
   .modal
     &__close
@@ -432,10 +436,14 @@
         display: none
 
   .header
+    --logo-max-width: 9.5rem
+
+
+
     &__container
       height: 5.6rem
     &__email
-      font-size: 1.1rem
+      display: none
     &__sep
       display: none
     &__phone
@@ -449,7 +457,7 @@
       padding-bottom: 3rem
       gap: 2.4rem
 
-    &__heading-word
+    &__heading
       font-size: clamp(4.2rem, 9vw, 7rem)
 
     &__description
@@ -521,8 +529,7 @@
       width: 36px
       height: 36px
 
-  .logo
-    max-width: 13rem
+
 
   .menu
     &-mobile
@@ -596,8 +603,7 @@
   .header
     &__container
       height: 5.2rem
-    &__email
-      display: none
+
 
   .theme-toggle
     padding: 0.5rem 0.8rem
@@ -609,7 +615,7 @@
     &__container
       padding-bottom: 2.4rem
 
-    &__heading-word
+    &__heading
       font-size: clamp(3.8rem, 10vw, 6rem)
 
     &__description
@@ -646,6 +652,16 @@
 
 
 @media (max-width: 479.98px)
+
+  .header
+    --logo-max-width: 8.5rem
+
+
+    &__container
+      justify-content: flex-start
+      gap: .8rem
+    &__logo
+      margin-right: auto
 
   .map-placement__container
     display: block
@@ -730,7 +746,7 @@
     justify-content: flex-start
 
   .hero
-    &__heading-word
+    &__heading
       font-size: clamp(3.2rem, 10.5vw, 5rem)
 
     &__description
@@ -763,9 +779,6 @@
   .header
     &__container
       gap: 1rem
-
-    &__logo
-      max-width: 10rem
 
   .social-link
     width: 28px

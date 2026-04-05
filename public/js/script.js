@@ -243,3 +243,22 @@ for (let card of cards3D) {
     cardInner.style.transform = cardCurrentTransform;
   }
 }
+
+
+
+window.addEventListener('load', () => {
+  setAnimationDelay('.hero__heading-line', '.hero__heading-word-letter', .95, 0.025);
+});
+
+
+function setAnimationDelay(parentSelector, selector, delay, step) {
+  const parent = document.querySelectorAll(parentSelector);
+  if (!parent) return;
+  parent.forEach(item => {
+    const element = item.querySelectorAll(selector);
+    if (!element) return;
+    for(let i=0; i<element.length; i++) {
+      element[i].style.animationDelay = `${delay + i * step}s`;
+    }
+  });
+}
